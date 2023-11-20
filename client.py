@@ -4,7 +4,7 @@ import socket
 from crypt_utils import DiffieHellman, FileCrypter
 
 HOST = '127.0.0.1'
-PORT = 2000
+PORT = 1999
 
 
 def main():
@@ -12,7 +12,7 @@ def main():
     sock.connect((HOST, PORT))
 
     p = 54
-    g = 53
+    g = 23
     a = 63  # это можно хранить в txt
 
     diffie_hellman = DiffieHellman(a=a, p=p, g=g)
@@ -28,7 +28,7 @@ def main():
     sock.connect((HOST, PORT))
     crypter = FileCrypter(private_key)
 
-    msg = input("Enter msg: ")
+    msg = input("Enter msg pls: ")
     result = crypter.encryption(msg)
     print(result)
     sock.send(pickle.dumps(result))
