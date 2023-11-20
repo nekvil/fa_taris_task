@@ -4,7 +4,7 @@ import socket
 from crypt_utils import DiffieHellman, FileCrypter
 
 HOST = '127.0.0.1'
-PORT = 2000
+PORT = 1999
 
 
 def main():
@@ -41,3 +41,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    

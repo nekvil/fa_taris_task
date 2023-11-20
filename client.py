@@ -4,17 +4,16 @@ import socket
 from crypt_utils import DiffieHellman, FileCrypter
 
 HOST = '127.0.0.1'
-PORT = 2000
+PORT = 1999
 
 
 def main():
     sock = socket.socket()
     sock.connect((HOST, PORT))
 
-    # это то что можно хранить в txt
     p = 54
-    g = 53
-    a = 63
+    g = 23
+    a = 63  # это можно хранить в txt
 
     diffie_hellman = DiffieHellman(a=a, p=p, g=g)
     client_mixed_key = diffie_hellman.mixed_key
