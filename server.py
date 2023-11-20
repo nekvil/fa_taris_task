@@ -36,7 +36,7 @@ def main():
             print(result)
 
         else:
-            raise ValueError(f"Был принят некорректный тип data: {type(data)}")
+            raise ValueError(f"Был принят некорректный тип дата: {type(data)}")
 
 
 if __name__ == "__main__":

@@ -11,9 +11,10 @@ def main():
     sock = socket.socket()
     sock.connect((HOST, PORT))
 
+    # это то что можно хранить в txt
     p = 54
     g = 53
-    a = 63  # это можно хранить в txt
+    a = 63
 
     diffie_hellman = DiffieHellman(a=a, p=p, g=g)
     client_mixed_key = diffie_hellman.mixed_key
@@ -28,7 +29,7 @@ def main():
     sock.connect((HOST, PORT))
     crypter = FileCrypter(private_key)
 
-    msg = input("Enter msg: ")
+    msg = input("Enter msg pls: ")
     result = crypter.encryption(msg)
     print(result)
     sock.send(pickle.dumps(result))

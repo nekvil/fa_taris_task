@@ -29,7 +29,7 @@ class DiffieHellman:
 
     def generate_key(self, mixed_key):
         """
-        :param mixed_key: смешанный ключ
-        :return: приватный ключ
+        :param mixed_key: смешанный ключик
+        :return: приватный ключик
         """
         return mixed_key ** self._a % self._p
