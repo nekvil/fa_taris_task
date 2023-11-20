@@ -4,16 +4,16 @@ import socket
 from crypt_utils import DiffieHellman, FileCrypter
 
 HOST = '127.0.0.1'
-PORT = 2000
+PORT = 1999
 
 
 def main():
     sock = socket.socket()
     sock.connect((HOST, PORT))
 
-    p = 54
-    g = 53
-    a = 63  # это можно хранить в txt
+    p = 24
+    g = 23
+    a = 43  # это можно хранить в txt
 
     diffie_hellman = DiffieHellman(a=a, p=p, g=g)
     client_mixed_key = diffie_hellman.mixed_key
@@ -28,7 +28,7 @@ def main():
     sock.connect((HOST, PORT))
     crypter = FileCrypter(private_key)
 
-    msg = input("Enter msg: ")
+    msg = input("Enter message: ")
     result = crypter.encryption(msg)
     print(result)
     sock.send(pickle.dumps(result))
@@ -41,3 +41,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
